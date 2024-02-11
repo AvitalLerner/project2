@@ -3,21 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz App</title>
-  <style>
-    /* Add your CSS styling here */
-  </style>
+  <title>Quiz App</title> 
+  <link href="../CSS/quiz.css" rel="stylesheet"/>
+
 </head>
 
 <body>
   <div id="quiz-container">
-    <h1>Quiz App</h1>
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+    <div id="youtube-player"></div>
+
+    <h1>Countries quiz</h1>
+    <div id="timer-container" class="timer"><span id="timer">5</span></div>
+  
     <div id="question-container"></div>
     <div id="answer-buttons" class="btn-container"></div>
-    <button id="next-button" class="btn" onclick="nextQuestion()">Next</button>
-    <div id="score-container">Score: <span id="current-score" >..quiz.js.totalScore</span></div>
+    <div id="score-container"><span id="current-score"></span></div>
+    <!-- onclick="nextQuestion()" -->
+    <!-- <button id="next-button" class="hide" >next</button> -->
+
+    <div id="score-container">
+      <img id="coin-image" src="../media/coin.webp" alt="Coin">
+      <span id="current-score" class="current-score">0</span>
+    </div>
+    
   </div>
 
+
+  <!-- Add the result popup div -->
+  <div id="result-popup">
+    <h2>תוצאות</h2>
+    <div id="result-content"></div>
+    <button onclick="closeResultPopup()">סגור</button>
+  </div>
+
+
   <script src="../javaScript/quiz.js"></script>
+
 </body>
 </html>

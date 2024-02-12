@@ -1,111 +1,48 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
-
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>משחקים</title>
-	<link href="../css/games.css" rel="stylesheet" type="text/css" />
-	<link href="../css/general.css" rel="stylesheet" type="text/css" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GameOn homePage</title>
+  <link rel="stylesheet" href="../CSS/homePage.css">
+  <script src="../javaScript/homePage.js" async></script>                
+  
 </head>
-
 <body>
 
-	<!-- header -->
-	<header class="header">
-		<div>
-			<a class="back_option" href="../html/index.html">יציאה</a>
-			<span id='username'></span>
-		</div>
+  <header>
+    <h1 class="title">Welcome To GameOn</h1>
+    <div class="top-left-buttons">
+      <button id="button1" href="login.html">Log Out</button>
+      <button id="button2" href="profile.html">profile</button>
+    </div>
+  </header>
+  
 
-		<div>
-			<a class="back_option" href="../html/PrivateArea.html">האזור האישי</a>
-			<span id='username'></span>
-		</div>
+  <div class="gallery">
+    <div class="row">
+      <img src="../asserts/Home Page/media/stickMan.png" alt="Sticky Man" onclick="alertComingSoon()">
+      <img src="../asserts/Home Page/media/car.png" alt="car" onclick="alertComingSoon()">
+      <img src="../asserts/Home Page/media/fruits.png" alt="fruits" onclick="alertComingSoon()">
+      <img src="../asserts/Home Page/media/lego.png" alt="lego" onclick="alertComingSoon()">
+      <a href="quiz.html"><img src="../asserts/Home Page/media/quiz.png" alt="quiz" ></a>
+    
+      <a href="MemoryLevel1.html"><img src="../asserts/Home Page/media/HarryPotter.png" alt="Harry Potter"></a>
+    </div>
 
-		<div class="welcome_game">
-			<h1>המשחקים שלנו</h1>
-		</div>
-
-	</header>
-	<!--/header-->
-
-	<!-- body-content -->
-	<div class="body-content">
-		<div class="section-inner">
-
-			<!-- line 1 of games -->
-			<div class="quarters clearfix">
-
-				<!-- one-quarter -->
-				<div class="one-quarter mobile-collapse">
-					<a href="./game1.html"><img src="../media/learningGame.jpg" alt="learningGame"></a>
-					<h3 class="head-game">משחק למידה</h3>
-				</div>
-				<!--/one-quarter-->
-
-				<!-- one-quarter -->
-				<div class="one-quarter mobile-collapse">
-					<a href="./game2.html"><img src="../media/hungman.png" alt="hungman"></a>
-					<h3 class="head-game">איש תלוי</h3>
-				</div>
-				<!--/one-quarter-->
-
-				<!-- one-quarter -->
-				<div class="one-quarter mobile-collapse">
-					<img src="../media/candycrash.jpg" alt="candycrash" onclick="alertComingSoon()">
-					<h3 class="head-game">Candy Crash</h3>
-				</div>
-				<!--/one-quarter-->
-
-				<!-- one-quarter -->
-				<div class="one-quarter one-quarter-last mobile-collapse">
-					<img src="../media/chess.jpg" alt="chess" onclick="alertComingSoon()">
-					<h3 class="head-game">שחמט</h3>
-				</div>
-				<!--/one-quarter-->
-
-			</div>
-			<!--/line 1 of games-->
-
-			<!-- line 2 of games -->
-			<div class="quarters clearfix">
-
-				<!-- one-quarter -->
-				<div class="one-quarter mobile-collapse">
-					<img src="../media/laddersAndSnakes.jpg" alt="laddersAndSnakes" onclick="alertComingSoon()">
-					<h3 class="head-game">סולמות ונחשים</h3>
-				</div>
-				<!--/one-quarter-->
-
-				<!-- one-quarter -->
-				<div class="one-quarter mobile-collapse">
-					<img src="../media/monopoly.jpg" alt="monopoly" onclick="alertComingSoon()">
-					<h3 class="head-game">מונופול</h3>
-				</div>
-				<!--/one-quarter-->
-
-				<!-- one-quarter -->
-				<div class="one-quarter mobile-collapse">
-					<img src="../media/subway.jpg" alt="subway" onclick="alertComingSoon()">
-					<h3 class="head-game">subway</h3>
-				</div>
-				<!--/one-quarter-->
-
-				<!-- one-quarter -->
-				<div class="one-quarter one-quarter-last mobile-collapse">
-					<img src="../media/TICTacToe2.jpg" alt="TICTacToe" onclick="alertComingSoon()">
-					<h3 class="head-game">איקס עיגול</h3>
-				</div>
-				<!--/one-quarter-->
-
-			</div>
-			<!--/line 2 of games-->
-		</div>
-	</div>
-	<script src="../js/games.js" type="text/javascript" defer></script>
+    <div class="row">
+      <img src="../asserts/Home Page/media/monkey.png" alt="monkey" onclick="alertComingSoon()">
+      <img src="../asserts/Home Page/media/moto.png" alt="motor" onclick="alertComingSoon()">
+      <img src="../asserts/Home Page/media/smile.png" alt="smile" onclick="alertComingSoon()">
+      <img src="../asserts/Home Page/media/spray.png" alt="spray" onclick="alertComingSoon()">
+      <img src="../asserts/Home Page/media/temple.png" alt="temple" onclick="alertComingSoon()">
+      <img src="../asserts/Home Page/media/narrow.png" alt="narrow" onclick="alertComingSoon()">
+   
+    </div>
+  </div>
+  
+  <footer>
+    <p>&copy; 2024 GameOn</p>
+  </footer>
 </body>
-
 </html>

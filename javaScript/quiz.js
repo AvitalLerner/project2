@@ -7,7 +7,7 @@ const questions = [
       { text: "מוסקבה", correct: false },
       { text: "ניו יורק", correct: false }
     ],
-    score: 3 
+    score: 3
   },
   {
     question: "איזה מדינה לא נמצאת באירופה?",
@@ -17,7 +17,7 @@ const questions = [
       { text: "גרמניה", correct: false },
       { text: "יוון", correct: false }
     ],
-    score: 5 
+    score: 5
   }
 
 ];
@@ -33,27 +33,27 @@ const quizContainer = document.getElementById("quiz-container");
 const questionContainer = document.getElementById("question-container");
 const answerButtonsContainer = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-button");
-const timerQuestion=5;
+const timerQuestion = 5;
 
 // quiz.js
 // document.addEventListener("DOMContentLoaded", function () {
 
-  // Add your quiz-related JavaScript code here
-  // ...
+// Add your quiz-related JavaScript code here
+// ...
 
-  // Include timer content in the quiz
+// Include timer content in the quiz
 
-  // const timerContainer = document.getElementById("timer-content");
-  // const timerFrame = document.createElement("iframe");
-  // timerFrame.id ="timerFrameId"
-  // timerFrame.src = "timer.html";
-  // timerFrame.style.width = "100%";
-  // timerFrame.style.height = "200px"; // Adjust the height as needed
-  // timerFrame.style.border = "2px solid black";
-  // // timerFrame.style.borderColor = "black";
-  // timerContainer.appendChild(timerFrame);
-  // const c = document.getElementById("timerFrameId");
-  // console.log("immediately after teimeframe: " + c);
+// const timerContainer = document.getElementById("timer-content");
+// const timerFrame = document.createElement("iframe");
+// timerFrame.id ="timerFrameId"
+// timerFrame.src = "timer.html";
+// timerFrame.style.width = "100%";
+// timerFrame.style.height = "200px"; // Adjust the height as needed
+// timerFrame.style.border = "2px solid black";
+// // timerFrame.style.borderColor = "black";
+// timerContainer.appendChild(timerFrame);
+// const c = document.getElementById("timerFrameId");
+// console.log("immediately after teimeframe: " + c);
 // });
 
 
@@ -95,8 +95,8 @@ function showQuestion(question) {
   const scoreContainer = document.getElementById("score-container");
   scoreContainer.innerText = "Score for this question: " + question.score;
 
-   // Start the timer for the current question (set to 5 seconds)
-   setTimeout(() => {
+  // Start the timer for the current question (set to 5 seconds)
+  setTimeout(() => {
     startTimer(timerQuestion, () => {
       // Call the timeOut function if the timer runs out
       timeOut();
@@ -114,10 +114,10 @@ function selectAnswer(answer) {
   //console.log(correct)
   // Play sound based on correctness
   if (correct) {
-    playAudio("../sound/applause.mp3",2); // Replace with your applause sound file
+    playAudio("../asserts/quiz/audio/applause.mp3", 2); // Replace with your applause sound file
     totalScore += questions[currentQuestionIndex].score;
   } else {
-    playAudio("disappointed.mp3",2); // Replace with your disappointed sound file
+    playAudio("disappointed.mp3", 2); // Replace with your disappointed sound file
   }
 
   // Update the score on the page
@@ -148,6 +148,7 @@ function selectAnswer(answer) {
     // Show results when the last question is answered
     setTimeout(() => {
       showResult();
+      saveGameResult('quiz', totalScore);
     });
   }
 }
@@ -155,7 +156,7 @@ function selectAnswer(answer) {
 function playAudio(audioFile, duration) {
   const audio = new Audio(audioFile);
   audio.play();
-  
+
   // Stop audio playback after the specified duration
   setTimeout(() => {
     audio.pause();
@@ -201,12 +202,12 @@ function showResult() {
   // Display average time and total score at the end
   const averageTime = questionsAnswered > 0 ? totalElapsedTime / questionsAnswered : 0;
 
- 
+
   let resultSummary = "<strong>Total Score:</strong> " + totalScore + "<br>" +
     "<strong>Average Time:</strong> " + averageTime.toFixed(2) + " seconds" +
     "<hr>";
 
-    
+
   // Display questions with X or V indicating correctness
   questions.forEach((question, index) => {
     // Get the index of the selected answer for the current question
@@ -217,7 +218,7 @@ function showResult() {
 
     // console.log( "!== " + selectedAnswerIndex !== undefined);
     // console.log("correct " + question.answers[selectedAnswerIndex].correct);
-    
+
     // Add question and X or V indicating correctness
     resultSummary += `<strong>Question ${index + 1}:</strong> ${question.question} `;
     resultSummary += isCorrect ? "<span style='color: green;'>✔ Correct</span>" : "<span style='color: red;'>✘ Incorrect</span>";
@@ -225,10 +226,10 @@ function showResult() {
   });
 
   // Update the content of the result popup
-  document.getElementById("result-content").innerHTML= resultSummary;
-  
-    // Show the result popup
-    document.getElementById("result-popup").style.display = "block";
+  document.getElementById("result-content").innerHTML = resultSummary;
+
+  // Show the result popup
+  document.getElementById("result-popup").style.display = "block";
 }
 // Function to close the result popup
 function closeResultPopup() {
@@ -236,3 +237,17 @@ function closeResultPopup() {
 }
 
 startQuiz();
+
+
+// Assume you have a function that saves the game data and points
+function saveGameResult(gameName, points) {
+  // Retrieve existing game data from local storage
+  const gamesDataStr = localStorage.getItem('gamesData');
+  const gamesData = gamesDataStr ? JSON.parse(gamesDataStr) : [];
+
+  // Add the new game result to the array
+  gamesData.push({ gameName, points });
+
+  // Save the updated array back to local storage
+  localStorage.setItem('gamesData', JSON.stringify(gamesData));
+}

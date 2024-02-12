@@ -1,0 +1,77 @@
+@import url(https://db.onlinewebfonts.com/c/f85072630ace90862c4690f1d61ece93?family=KG+HAPPY+Solid);
+
+body {
+  background-image: url('../asserts/Home Page/media/background.png'); /* Replace 'background.jpg' with your image file path */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.h1{
+  color: #FF6D00;
+  font-family: Creepy, serif; /*default: serif*/
+  font-weight: normal;
+  text-align: center;
+  font-size: 7em;
+}
+ footer {
+  background-color: rgba(0, 0, 0, 0.7); /* Adding transparency to improve readability */
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+}
+
+.top-left-buttons {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.top-left-buttons button {
+  background-color: #32b51b;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border-color: #32b51b;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+img {
+  width: 200px; /* Set the width to 160px */
+  height: 200px; /* Set the height to 160px */
+  border-radius: 23px;;
+}
+
+.title {
+  height: 1.5em;
+  text-align: center;
+  font-size: 90px;
+  margin: 0 auto; /* This centers the title horizontally */
+  font-family: "KG HAPPY Solid";
+  color: #32b51b;
+
+}
